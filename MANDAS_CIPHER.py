@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 ####----------------------------------------------------------------------------#### 
 
 # Word or Phrase to be encrypted 
-word = 'SECRET IS THE way to Go' 
+word = 'Sherlock Holmes' 
 word = word.upper() 
 word = word.replace(" ", ".") 
 word_array = [char for char in word]
@@ -72,6 +72,9 @@ cipher_array = []
 n = 0 
 
 for item in word_array: 
+    #-------------------------------#
+    #--- Takes Care of 'UP' Case ---#
+    #-------------------------------#
     if key_array[n] == 'U': 
        if item == 'A': 
            cipher_array.append('Z')
@@ -149,7 +152,171 @@ for item in word_array:
            cipher_array.append('W')
            n += 1 
        elif item == 'Z': 
-           cipher_array.append('V')                               
+           cipher_array.append('V')   
+    #---------------------------------#
+    #--- Takes Care of 'DOWN' Case ---#
+    #---------------------------------#  
+    elif key_array[n] == 'D': 
+        if item == 'A': 
+           cipher_array.append('G')
+           n += 1 
+        elif item == 'B': 
+           cipher_array.append('H')
+           n += 1  
+        elif item == 'C': 
+           cipher_array.append('I') 
+           n += 1
+        elif item == 'D': 
+           cipher_array.append('J')
+           n += 1
+        elif item == 'E': 
+           cipher_array.append('K')
+           n += 1 
+        elif item == 'F': 
+           cipher_array.append('%')
+           n += 1
+        elif item == 'G': 
+           cipher_array.append('O')
+           n += 1 
+        elif item == 'H': 
+           cipher_array.append('P')
+           n += 1 
+        elif item == 'I': 
+           cipher_array.append('Q')
+           n += 1 
+        elif item == 'J': 
+           cipher_array.append('R')
+           n += 1 
+        elif item == 'K': 
+           cipher_array.append('S')
+           n += 1 
+        elif item == 'L': 
+           cipher_array.append('&')
+           n += 1 
+        elif item == 'M': 
+           cipher_array.append('N') 
+           n += 1 
+        elif item == 'N': 
+           cipher_array.append('U')
+           n += 1 
+        elif item == 'O': 
+           cipher_array.append('V')
+           n += 1 
+        elif item == 'P': 
+           cipher_array.append('W')
+           n += 1 
+        elif item == 'Q': 
+           cipher_array.append('X')
+           n += 1 
+        elif item == 'R': 
+           cipher_array.append('F')
+           n += 1 
+        elif item == 'S': 
+           cipher_array.append('L')
+           n += 1 
+        elif item == 'T': 
+           cipher_array.append('*')
+           n += 1 
+        elif item == 'U': 
+           cipher_array.append('T')
+           n += 1 
+        elif item == 'V': 
+           cipher_array.append('Z')
+           n += 1 
+        elif item == 'W': 
+           cipher_array.append('Y')
+           n += 1 
+        elif item == 'X': 
+           cipher_array.append('#')
+           n += 1 
+        elif item == 'Y': 
+           cipher_array.append('B')
+           n += 1 
+        elif item == 'Z': 
+           cipher_array.append('A')
+    #----------------------------------#
+    #--- Takes Care of 'RIGHT' Case ---#
+    #----------------------------------#
+    elif key_array[n] == 'R': 
+        if item == 'A': 
+           cipher_array.append('B')
+           n += 1 
+        elif item == 'B': 
+           cipher_array.append('H')
+           n += 1  
+        elif item == 'C': 
+           cipher_array.append('I') 
+           n += 1
+        elif item == 'D': 
+           cipher_array.append('J')
+           n += 1
+        elif item == 'E': 
+           cipher_array.append('K')
+           n += 1 
+        elif item == 'F': 
+           cipher_array.append('%')
+           n += 1
+        elif item == 'G': 
+           cipher_array.append('O')
+           n += 1 
+        elif item == 'H': 
+           cipher_array.append('P')
+           n += 1 
+        elif item == 'I': 
+           cipher_array.append('Q')
+           n += 1 
+        elif item == 'J': 
+           cipher_array.append('R')
+           n += 1 
+        elif item == 'K': 
+           cipher_array.append('S')
+           n += 1 
+        elif item == 'L': 
+           cipher_array.append('&')
+           n += 1 
+        elif item == 'M': 
+           cipher_array.append('N') 
+           n += 1 
+        elif item == 'N': 
+           cipher_array.append('U')
+           n += 1 
+        elif item == 'O': 
+           cipher_array.append('V')
+           n += 1 
+        elif item == 'P': 
+           cipher_array.append('W')
+           n += 1 
+        elif item == 'Q': 
+           cipher_array.append('X')
+           n += 1 
+        elif item == 'R': 
+           cipher_array.append('F')
+           n += 1 
+        elif item == 'S': 
+           cipher_array.append('L')
+           n += 1 
+        elif item == 'T': 
+           cipher_array.append('*')
+           n += 1 
+        elif item == 'U': 
+           cipher_array.append('T')
+           n += 1 
+        elif item == 'V': 
+           cipher_array.append('Z')
+           n += 1 
+        elif item == 'W': 
+           cipher_array.append('Y')
+           n += 1 
+        elif item == 'X': 
+           cipher_array.append('#')
+           n += 1 
+        elif item == 'Y': 
+           cipher_array.append('B')
+           n += 1 
+        elif item == 'Z': 
+           cipher_array.append('A')
+    
+                                  
         
     else: 
         cipher_array.append('!')
