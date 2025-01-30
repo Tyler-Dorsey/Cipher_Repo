@@ -9,11 +9,11 @@ import matplotlib.pyplot as plt
 # Author: Tyler Dorsey                                                             #
 # Purpose: The Mandas Paradiddle Cipher is a poly-alphabetic cipher that arose from# 
 #          the union of mathematics and music, specifically drumming patterns known# 
-#          as paradiddles.                                                         #  
+#          as paradiddles. This script is a 2-D version of the Mandas cipher.      #                                                         #  
 ####----------------------------------------------------------------------------#### 
 
 # Word or Phrase to be encrypted 
-word = 'Sherlock Holmes is the greatest detective.' 
+word = 'Sherlock Holmes' 
 word = word.upper() 
 word = word.replace(" ", ".") 
 word_array = [char for char in word]
@@ -21,8 +21,9 @@ print(f'This is the phrase to be encrypted: {word}')
 #print(f'This is the array: {word_array}') 
 
 # Paradiddle Key 
-key = 'UDRL' 
-
+key = 'UDLR DRDL' 
+key = key.upper()
+key = key.replace(" ", "")
 
 #--- Extend Paradiddle Key ---# 
 difference = abs(len(key) - len(word_array))
@@ -61,12 +62,11 @@ A_Matrix = np.array([
                      ['Z', 'Y', '#', '%', '&', '*']
                      ])  
 
-#--------------------------------#
-#----- ENCRYPTION ALGORITHM -----#
-#--------------------------------# 
+#----------------------------------------------------#
+#--------------- ENCRYPTION ALGORITHM ---------------#
+#----------------------------------------------------# 
 print(f'word array: {word_array}')
 print(f'key array:  {key_array}')
-
 
 cipher_array = []
 n = 0 
@@ -240,7 +240,7 @@ for item in word_array:
            cipher_array.append('A')
            n += 1
         elif item == '.': 
-           cipher_array.append('#')
+           cipher_array.append('.')
            n += 1
     #----------------------------------#
     #--- Takes Care of 'RIGHT' Case ---#
@@ -412,8 +412,6 @@ for item in word_array:
         elif item == '.':
            cipher_array.append('&')
            n += 1 
-    
-                                  
         
     else: 
         cipher_array.append('!')
@@ -426,7 +424,208 @@ print(f'Encrypted Message: {encrypted_string}')
 print('-------------------------------------------------------------------------------------')
 
 
-#print(f'{len(encrypted_string)}  {len(key_array)}')       
+#print(f'{len(encrypted_string)}  {len(key_array)}')    
 
+#--- Create Opposite Decryption Paradiddle Key ---#
 
+new_key = []
 
+for item in key_array: 
+    if item == 'U':
+        new_key.append('D')
+    elif item == 'D':
+        new_key.append('U')
+    elif item == 'R': 
+        new_key.append('L')
+    elif item == 'L': 
+        new_key.append('R')
+if len(new_key) == len(key_array): 
+    print(f'New Key Array: {new_key}')
+    print(f'Old Key Array: {key_array}')
+    print('SUCCESS: OLD AND NEW KEY LENGTHS MATCH')
+    
+    
+#----------------------------------------------------#
+#--------------- DECRYPTION ALGORITHM ---------------#
+#----------------------------------------------------# 
+
+decrypted_array = []
+n = 0
+
+for item in cipher_array: 
+    #-------------------------------#
+    #--- Takes Care of 'UP' Case ---#
+    #-------------------------------#
+    if key_array[n] == 'U': 
+       if item == 'Z': 
+           decrypted_array.append('A')
+           n += 1 
+       elif item == 'Y': 
+           decrypted_array.append('B')
+           n += 1  
+       elif item == '#': 
+           decrypted_array.append('C') 
+           n += 1
+       elif item == '%': 
+           decrypted_array.append('')
+           n += 1
+       elif item == '&': 
+           decrypted_array.append('E')
+           n += 1 
+       elif item == 'R': 
+           decrypted_array.append('F')
+           n += 1
+       elif item == 'A': 
+           decrypted_array.append('G')
+           n += 1 
+       elif item == 'B': 
+           decrypted_array.append('H')
+           n += 1 
+       elif item == 'C': 
+           decrypted_array.append('I')
+           n += 1 
+       elif item == 'D': 
+           decrypted_array.append('J')
+           n += 1 
+       elif item == 'E': 
+           decrypted_array.append('K')
+           n += 1 
+       elif item == 'S': 
+           decrypted_array.append('L')
+           n += 1 
+       elif item == '*': 
+           decrypted_array.append('M') 
+           n += 1 
+       elif item == 'M': 
+           decrypted_array.append('N')
+           n += 1 
+       elif item == 'G': 
+           decrypted_array.append('O')
+           n += 1 
+       elif item == 'H': 
+           decrypted_array.append('P')
+           n += 1 
+       elif item == 'I': 
+           decrypted_array.append('Q')
+           n += 1 
+       elif item == 'J': 
+           decrypted_array.append('R')
+           n += 1 
+       elif item == 'K': 
+           decrypted_array.append('S')
+           n += 1 
+       elif item == 'U': 
+           decrypted_array.append('T')
+           n += 1 
+       elif item == 'N': 
+           decrypted_array.append('U')
+           n += 1 
+       elif item == 'O': 
+           decrypted_array.append('V')
+           n += 1 
+       elif item == 'P': 
+           decrypted_array.append('W')
+           n += 1 
+       elif item == 'Q': 
+           decrypted_array.append('X')
+           n += 1 
+       elif item == 'W': 
+           decrypted_array.append('Y')
+           n += 1 
+       elif item == 'V': 
+           decrypted_array.append('Z')   
+           n += 1
+       elif item == '.': 
+           decrypted_array.append('.')
+           n += 1
+    
+    #---------------------------------#
+    #--- Takes Care of 'DOWN' Case ---#
+    #---------------------------------#
+    elif key_array[n] == 'D': 
+        if item == 'G': 
+           decrypted_array.append('A')
+           n += 1 
+        elif item == 'H': 
+           decrypted_array.append('B')
+           n += 1  
+        elif item == 'I': 
+           decrypted_array.append('C') 
+           n += 1
+        elif item == 'J': 
+           decrypted_array.append('D')
+           n += 1
+        elif item == 'K': 
+           decrypted_array.append('E')
+           n += 1 
+        elif item == '%': 
+           decrypted_array.append('F')
+           n += 1
+        elif item == 'O': 
+           decrypted_array.append('G')
+           n += 1 
+        elif item == 'P': 
+           decrypted_array.append('H')
+           n += 1 
+        elif item == 'Q': 
+           decrypted_array.append('I')
+           n += 1 
+        elif item == 'R': 
+           decrypted_array.append('J')
+           n += 1 
+        elif item == 'S': 
+           decrypted_array.append('K')
+           n += 1 
+        elif item == '&': 
+           decrypted_array.append('L')
+           n += 1 
+        elif item == 'N': 
+           decrypted_array.append('M') 
+           n += 1 
+        elif item == 'U': 
+           decrypted_array.append('N')
+           n += 1 
+        elif item == 'V': 
+           decrypted_array.append('O')
+           n += 1 
+        elif item == 'W': 
+           decrypted_array.append('P')
+           n += 1 
+        elif item == 'X': 
+           decrypted_array.append('Q')
+           n += 1 
+        elif item == 'F': 
+           decrypted_array.append('R')
+           n += 1 
+        elif item == 'L': 
+           decrypted_array.append('S')
+           n += 1 
+        elif item == '*': 
+           decrypted_array.append('T')
+           n += 1 
+        elif item == 'T': 
+           decrypted_array.append('U')
+           n += 1 
+        elif item == 'Z': 
+           decrypted_array.append('V')
+           n += 1 
+        elif item == 'Y': 
+           decrypted_array.append('W')
+           n += 1 
+        elif item == '#': 
+           decrypted_array.append('X')
+           n += 1 
+        elif item == 'B': 
+           decrypted_array.append('Y')
+           n += 1 
+        elif item == 'A': 
+           decrypted_array.append('Z')
+           n += 1
+        elif item == '.': 
+           decrypted_array.append('.')
+           n += 1
+    
+    else:
+        decrypted_array.append('VOID') 
+        n += 1
+print(f'Decrypted Array: {decrypted_array}')
