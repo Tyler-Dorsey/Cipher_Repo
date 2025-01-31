@@ -325,7 +325,7 @@ for item in word_array:
            cipher_array.append('A')
            n += 1
         elif item == '.': 
-           cipher_array.append('%')
+           cipher_array.append('.')
            n += 1
     #----------------------------------#
     #--- Takes Care of 'LEFT' Case ----#
@@ -544,6 +544,92 @@ for item in cipher_array:
     #---------------------------------#
     elif key_array[n] == 'D': 
         if item == 'G': 
+           decrypted_array.append('A')
+           n += 1 
+        elif item == 'H': 
+           decrypted_array.append('B')
+           n += 1  
+        elif item == 'I': 
+           decrypted_array.append('C') 
+           n += 1
+        elif item == 'J': 
+           decrypted_array.append('D')
+           n += 1
+        elif item == 'K': 
+           decrypted_array.append('E')
+           n += 1 
+        elif item == '%': 
+           decrypted_array.append('F')
+           n += 1
+        elif item == 'O': 
+           decrypted_array.append('G')
+           n += 1 
+        elif item == 'P': 
+           decrypted_array.append('H')
+           n += 1 
+        elif item == 'Q': 
+           decrypted_array.append('I')
+           n += 1 
+        elif item == 'R': 
+           decrypted_array.append('J')
+           n += 1 
+        elif item == 'S': 
+           decrypted_array.append('K')
+           n += 1 
+        elif item == '&': 
+           decrypted_array.append('L')
+           n += 1 
+        elif item == 'N': 
+           decrypted_array.append('M') 
+           n += 1 
+        elif item == 'U': 
+           decrypted_array.append('N')
+           n += 1 
+        elif item == 'V': 
+           decrypted_array.append('O')
+           n += 1 
+        elif item == 'W': 
+           decrypted_array.append('P')
+           n += 1 
+        elif item == 'X': 
+           decrypted_array.append('Q')
+           n += 1 
+        elif item == 'F': 
+           decrypted_array.append('R')
+           n += 1 
+        elif item == 'L': 
+           decrypted_array.append('S')
+           n += 1 
+        elif item == '*': 
+           decrypted_array.append('T')
+           n += 1 
+        elif item == 'T': 
+           decrypted_array.append('U')
+           n += 1 
+        elif item == 'Z': 
+           decrypted_array.append('V')
+           n += 1 
+        elif item == 'Y': 
+           decrypted_array.append('W')
+           n += 1 
+        elif item == '#': 
+           decrypted_array.append('X')
+           n += 1 
+        elif item == 'B': 
+           decrypted_array.append('Y')
+           n += 1 
+        elif item == 'A': 
+           decrypted_array.append('Z')
+           n += 1
+        elif item == '.': 
+           decrypted_array.append('.')
+           n += 1
+           
+    #----------------------------------#
+    #--- Takes Care of 'RIGHT' Case ---#
+    #----------------------------------#
+    elif key_array[n] == 'R': 
+        if item == 'B': 
            decrypted_array.append('A')
            n += 1 
         elif item == 'H': 
