@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 ####----------------------------------------------------------------------------####
-# Title: THE MANDAS PARADIDDLE CIPHER                                              # 
+# Title: THE MANDAS PARADIDDLE CIPHER 2D                                              # 
 # Author: Tyler Dorsey                                                             #
 # Purpose: The Mandas Paradiddle Cipher is a poly-alphabetic cipher that arose from# 
 #          the union of mathematics and music, specifically drumming patterns known# 
@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 ####----------------------------------------------------------------------------#### 
 
 # Word or Phrase to be encrypted 
-word = 'Tyler is great.' 
+word = 'Sherlock Holmes is the greatest detective.' 
 word = word.upper() 
 word = word.replace(" ", ".") 
 word_array = [char for char in word]
