@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 ####----------------------------------------------------------------------------####
-# Title: THE MANDAS PARADIDDLE CIPHER 3D (Tensor Version)                                             # 
+# Title: THE MANDAS PARADIDDLE CIPHER 3D (Tensor Version)                          # 
 # Author: Tyler Dorsey                                                             #
 # Purpose: The Mandas Paradiddle Cipher is a poly-alphabetic cipher that arose from# 
 #          the union of mathematics and music, specifically drumming patterns known# 
@@ -24,3 +24,21 @@ print(f'This is the phrase to be encrypted: {word}')
 key = 'UDRL DUIO'
 key = key.upper()
 key = key.replace(' ','')
+print(f'Key: {key}')
+
+#--- Extend Paradiddle Key ---# 
+difference = abs(len(word_array) - len(key))
+
+while len(word_array) != len(key):
+    if difference > len(key): 
+        key = key + key  
+        difference = abs(len(word_array) - len(key))
+    elif difference < len(key): 
+        key = key + key[:difference]
+        difference = abs(len(word_array) - len(key))
+    elif difference == 0: 
+        break 
+print(f'Extended Key: {key}') 
+
+extended_key = [char for char in key]
+print(extended_key)

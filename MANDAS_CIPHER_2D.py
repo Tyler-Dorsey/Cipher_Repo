@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 ####----------------------------------------------------------------------------####
-# Title: THE MANDAS PARADIDDLE CIPHER 2D                                              # 
+# Title: THE MANDAS PARADIDDLE CIPHER 2D                                           # 
 # Author: Tyler Dorsey                                                             #
 # Purpose: The Mandas Paradiddle Cipher is a poly-alphabetic cipher that arose from# 
 #          the union of mathematics and music, specifically drumming patterns known# 
