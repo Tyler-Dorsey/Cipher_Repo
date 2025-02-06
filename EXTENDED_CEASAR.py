@@ -14,15 +14,30 @@ import matplotlib.pyplot as plt
 ####----------------------------------------------------------------------------#### 
 
 
+# Phrase To Be Encrypted
+word = 'Tyler is great.'
+word = word.upper()
+word = word.replace('.','--')
+word = word.replace(' ', '.')
+print(f'Phrase: {word}')
+
 #--- Establish Keys ---# 
 key_1 = 22/7 
 key_2 = math.e  
 product_key = key_1 * key_2 
+key_3 = 'fbfb'
 print(f'Product of the keys: {product_key}') 
 
 #--- Truncate Product Key ---# 
 N = 13
 factor = 10**N 
 truncated_key = math.floor(factor * product_key) 
-print(f'Truncated Key: {truncated_key}')
+print(f'Truncated Key: {truncated_key}') 
+
+#--- Alphabet Matrix ---# 
+alphabet_matrix = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+
+
+
 
