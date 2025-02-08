@@ -35,10 +35,12 @@ truncated_key = math.floor(factor * product_key)
 truncated_key = [char for char in str(truncated_key)]
 print(f'Truncated Key: {truncated_key}') 
 
-#--- Alphabet Matrix ---# 
+#-----------------------#
+#--- Alphabet Matrix ---#
+#-----------------------# 
 alphabet_matrix = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-# Truncated Key Check To Word Length
+#--- Truncated Key Check To Word Length ---#
 difference = abs(len(word)-len(truncated_key))
 
 while len(word) != len(truncated_key):
@@ -62,7 +64,38 @@ if len(word) == len(truncated_key):
     print(f'Word Length: {len(word)}')
     print(f'Key Length : {len(truncated_key)}')
 
+#------------------#
+#--- ENCRYPTION ---#
+#------------------# 
 
+alphabet_matrix += alphabet_matrix +alphabet_matrix
+cipher_array = []
+n = 0 
 
-
+for n in range(len(word)): 
+    if truncated_key[n] == '0': 
+        cipher_array.append(alphabet_matrix[n])
+    elif truncated_key[n] == '1': 
+        cipher_array.append(alphabet_matrix[n+1])
+    elif truncated_key[n] == '2':
+        cipher_array.append(alphabet_matrix[n+2])
+    elif truncated_key[n] == '3': 
+        cipher_array.append(alphabet_matrix[n+3])
+    elif truncated_key[n] == '4':
+        cipher_array.append(alphabet_matrix[n+4])
+    elif truncated_key[n] == '5':
+        cipher_array.append(alphabet_matrix[n+5])
+    elif truncated_key[n] == '6':
+        cipher_array.append(alphabet_matrix[n+6])
+    elif truncated_key[n] == '7':
+        cipher_array.append(alphabet_matrix[n+7])
+    elif truncated_key[n] == '8':
+        cipher_array.append(alphabet_matrix[n+8])
+    elif truncated_key[n] == '9':
+        cipher_array.append(alphabet_matrix[n+9])
+    else: 
+        break 
+print(str(cipher_array))
+  
+        
 
