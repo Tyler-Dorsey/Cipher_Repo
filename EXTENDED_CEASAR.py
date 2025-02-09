@@ -68,7 +68,11 @@ if len(word) == len(truncated_key):
 #--- ENCRYPTION ---#
 #------------------# 
 
-alphabet_matrix += alphabet_matrix +alphabet_matrix
+number = len(word)%26 
+
+for number in range(number):
+    alphabet_matrix += alphabet_matrix
+    
 cipher_array = []
 n = 0 
 
