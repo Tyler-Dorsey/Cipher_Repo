@@ -25,8 +25,9 @@ from sympy import randprime
 phrase = 'This is the phrase to be encrypted.' 
 phrase = phrase.upper() 
 phrase = phrase.replace(' ', '-') 
-phrase_array = [phrase]
-print(f'Phrase: {phrase}')
+phrase_array = [char for char in phrase]
+print(f'Phrase: {phrase}') 
+
 
 
 #-------------------------#
@@ -41,20 +42,19 @@ key_1 = generate_random_prime()
 key_2 = generate_random_prime() 
 
 master_key = key_1*key_2 
-
-print(f'Master Key Value: {master_key}')  
-
+master_key_array = [int(digit) for digit in str(master_key)]
 
 
-master_key_array = [] 
+print(f'Master Key Value: {master_key}')   
 
 # Ensure master_key_array is the same length as phrase_array
-while len(master_key_array) < len(phrase_array): 
-    master_key_array.append(master_key)
+while len(master_key_array) < len(phrase_array):
+    master_key_array += master_key_array  # Double the array size
 
-print(f'Master Key Array: {master_key_array}')  # Debugging
-print(f'Length of Master Key Array: {len(master_key_array)}')
-print(f'Length of Phrase Array: {len(phrase_array)}') 
-print(f'Phrase Array: {phrase_array}')
+# Trim excess elements if master_key_array is now longer
+master_key_array = master_key_array[:len(phrase_array)]
 
+print(f'Master Key Array: {master_key_array}')
+print(f'Master Key Array Length: {len(master_key_array)}')
+print(f'Phrase Array Length: {len(phrase_array)}')
 
